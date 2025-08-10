@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>金融関係メモサイト</title>
+  <link rel="stylesheet" href="css/style1.css" />
+</head>
+<body>
+  <div class="shell">
+    <!-- ===================== Header / Nav ===================== -->
+    <header class="nav" role="navigation" aria-label="Primary">
+      <div class="nav-inner">
+        <!-- 左：ブランドロゴ（韓国セレクトショップっぽい最小表現） -->
+        <a class="brand" href="#" aria-label="Go to home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>NOIR ATELIER</span>
+        </a>
+
+        <!-- 中央：メニュー（韓国語ラベル） -->
+        <nav class="menu" aria-label="메뉴">
+          <!-- aria-current="page" で現在ページ強調 -->
+          <a href="#" aria-current="page">HOME</a>
+          <a href="html/確定拠出年金.html">確定拠出年金</a>
+          <a href="#new">新作</a>
+          <a href="#lookbook">ルックブック</a>
+          <a href="#store">ストア</a>
+          <a href="#contact">コンタクト</a>
+        </nav>
+
+        <!-- 右：ツール（検索/カート/ハンバーガー） -->
+        <div class="tools">
+          <button class="icon-btn" aria-label="Search">検索</button>
+          <button class="icon-btn" aria-label="Cart">👜</button>
+          <button id="hamburger" class="icon-btn hamburger" aria-expanded="false" aria-controls="mobi" aria-label="Open menu">☰</button>
+        </div>
+      </div>
+
+      <!-- モバイルメニュー（ハンバーガーで開閉） -->
+      <div id="mobi" class="mobile-menu" hidden>
+        <a href="#">홈</a>
+        <a href="#collection">컬렉션</a>
+        <a href="#new">신상</a>
+        <a href="#lookbook">룩북</a>
+        <a href="#store">스토어</a>
+        <a href="#contact">문의</a>
+      </div>
+    </header>
+
+    <!-- ===================== Main Content ===================== -->
+    <main>
+      <!-- 1) ヒーロー：左右グリッド -->
+      <section class="hero">
+        <!-- テキストカード -->
+        <div class="hero-card">
+          <div class="tags">
+            <span class="tag">GOTHIC</span>
+            <span class="tag">DRESS</span>
+            <span class="tag">FW/2025</span>
+          </div>
+          <h1>financial</h1>
+          <p>
+            金融関係についての知見をメモするために作ったサイト
+          </p>
+          <div style="display:grid; grid-auto-flow:column; gap:10px; width:max-content;">
+            <button class="btn primary" onclick="smooth('#new')">新作を見る</button>
+            <button class="btn" onclick="smooth('#collection')">定番コレクション</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2) フィルターバー（Chipをクリックで仮フィルタ） -->
+      <div class="filters-wrap">
+        <div class="filters" role="tablist" aria-label="カテゴリ">
+          <button class="chip" data-filter="all" aria-pressed="true">すべて</button>
+          <button class="chip" data-filter="onepiece">服</button>
+          <button class="chip" data-filter="skirt">ズボン</button>
+          <button class="chip" data-filter="blouse">블라우스</button>
+          <button class="chip" data-filter="outer">아우터</button>
+          <button class="chip" data-filter="accessory">악세서리</button>
+        </div>
+      </div>
+
+      <!-- 3) 商品グリッド（12列CSS Grid） -->
+      <section id="new" class="grid-wrap">
+        <h2 style="margin:0 0 10px;">신상 — NEW ARRIVALS</h2>
+        <p style="margin:0 0 16px; color:var(--sub-ink);">静謐なブラックにレース、艶のバランス。
+          グリッドで整えたギャラリー</p>
+
+        <div id="grid" class="product-grid">
+          <!-- ▼ カードは data-tags で簡易フィルタ可能にしています -->
+          <article class="card" data-tags="onepiece">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1551537482-f2075a1d41f2?q=80&w=1600&auto=format&fit=crop" alt="Black lace dress"/>
+              <span class="badge">NEW</span>
+            </div>
+            <div class="body">
+              <h3 class="title">Eclipse Lace Dress</h3>
+              <p class="desc">レース×Aライン。日常で着られる静かなゴシック。</p>
+              <div class="price">¥18,900</div>
+            </div>
+            <div class="foot">
+              <button class="btn" data-quick>クイックビュー</button>
+              <button class="btn primary">장바구니</button>
+            </div>
+          </article>
+
+          <article class="card" data-tags="onepiece">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1600&auto=format&fit=crop" alt="Structured black dress"/>
+              <span class="badge">HOT</span>
+            </div>
+            <div class="body">
+              <h3 class="title">Noir Column Dress</h3>
+              <p class="desc">直線的シルエット。タックで魅せるミニマリズム。</p>
+              <div class="price">¥22,400</div>
+            </div>
+            <div class="foot">
+              <button class="btn" data-quick>クイックビュー</button>
+              <button class="btn primary">장바구니</button>
+            </div>
+          </article>
+
+          <article class="card" data-tags="skirt">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1542060748-10c28b62716c?q=80&w=1600&auto=format&fit=crop" alt="Black skirt"/>
+              <span class="badge">NEW</span>
+            </div>
+            <div class="body">
+              <h3 class="title">Velvet Midi Skirt</h3>
+              <p class="desc">ベルベットの陰影がつくる上質な立体感。</p>
+              <div class="price">¥14,200</div>
+            </div>
+            <div class="foot">
+              <button class="btn" data-quick>クイックビュー</button>
+              <button class="btn primary">장바구니</button>
+            </div>
+          </article>
+
+          <article class="card" data-tags="blouse">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1519336555923-59661f41bb26?q=80&w=1600&auto=format&fit=crop" alt="Black blouse"/>
+              <span class="badge">RESTOCK</span>
+            </div>
+            <div class="body">
+              <h3 class="title">Shadow Puff Blouse</h3>
+              <p class="desc">ショルダーに軽やかさ。インもアウトも決まる。</p>
+              <div class="price">¥9,800</div>
+            </div>
+            <div class="foot">
+              <button class="btn" data-quick>クイックビュー</button>
+              <button class="btn primary">장바구니</button>
+            </div>
+          </article>
+
+          <article class="card" data-tags="outer">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1753865220999-af2ab1d93a7f?q=80&w=1309&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Black outer coat"/>
+              <span class="badge">LIMITED</span>
+            </div>
+            <div class="body">
+              <h3 class="title">Grave Wool Coat</h3>
+              <p class="desc">厚手ウールで直線美。冬の主役アウター。</p>
+              <div class="price">¥29,400</div>
+            </div>
+            <div class="foot">
+              <button class="btn" data-quick>クイックビュー</button>
+              <button class="btn primary">장바구니</button>
+            </div>
+          </article>
+
+          <article class="card" data-tags="accessory">
+            <div class="thumb">
+              <img src="https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?q=80&w=1600&auto=format&fit=crop" alt="Choker accessory"/>
+              <span class="badge">SET</span>
+            </div>
+            <div class="body">
+              <h3 class="title">Moon Choker</h3>
+              <p class="desc">シンプルな三日月チャーム。首元にさりげない重力。</p>
+              <div class="price">¥3,200</div>
+            </div>
+            <div class="foot">
+              <button class="btn" data-quick>クイックビュー</button>
+              <button class="btn primary">장바구니</button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== Footer ===================== -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <small>© 2025 Noir Atelier. All rights reserved.</small>
+        <div class="sns">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Pinterest">📌</a>
+          <a href="https://x.com/asdfgfghjkv" aria-label="X / Twitter">𝕏</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================== Scripts ===================== -->
+<script src="js/script.js"></script>
+
+
+
+</body>
+</html>

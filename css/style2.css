@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+/* 全ページを囲うラッパーに適用 */
+.shell {
+  width: 400;       /* 固定幅 */
+  margin: 0 auto; 
+}
+/* ベースフォントと背景 */
+body {
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
+    background: #f4f6fa;
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+/* ナビゲーションバー */
+.navbar {
+    background: #64071a;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    height: 56px;
+}
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 0 4px;
+
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 56px;
+    transition: background 0.2s, color 0.2s;
+}
+.navbar a:hover {
+    background: #fff;
+    color: #86525c;
+    border-radius: 4px;
+}
+
+/* コンテンツ全体 */
+.content {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #decdcd;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 40px 32px;
+}
+
+/* 節ごとの区切り */
+.section {
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1.5px solid #0f0909;
+}
+.section:last-child {
+    border-bottom: none;
+}
+
+/* 見出し */
+h1 {
+    font-size: 1.7rem;
+    color: #64071a;
+    margin-bottom: 0.7em;
+    font-weight: 700;
+}
+h2 {
+    font-size: 1.2rem;
+    color: #3d1c1c;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+p {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.8;
+    margin-bottom: 0.7em;
+}
+
+/* メリットボックス */
+.メリット-box {
+    background: #fff;
+    border: 2px solid #bfa3a3;
+    border-radius: 12px;
+    padding: 28px 22px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 8px rgba(100,7,26,0.06);
+}
+.メリット-box.company {
+    border-left: 8px solid #64071a;
+}
+.メリット-box.personal {
+    border-left: 8px solid #1a4a64;
+}
+
+/* レスポンシブ */
+@media (max-width: 600px) {
+    .content {
+        padding: 18px 6px;
+    }
+    h1 { font-size: 1.2rem; }
+    h2 { font-size: 1rem; }
+}
+
